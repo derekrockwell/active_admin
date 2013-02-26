@@ -63,9 +63,11 @@ module ActiveAdmin
               end
             when Page
 
-              match "/#{config.underscored_resource_name}" => "#{config.underscored_resource_name}#index"
+              get "/#{config.underscored_resource_name}" => "#{config.underscored_resource_name}#index"
               config.page_actions.each do |action|
-                match "/#{config.underscored_resource_name}/#{action.name}" => "#{config.underscored_resource_name}##{action.name}", :via => action.http_verb
+                #will need to update this to ensure the proper routes get added.
+                #just hacking away to get it to run
+                get "/#{config.underscored_resource_name}/#{action.name}" => "#{config.underscored_resource_name}##{action.name}", :via => action.http_verb
               end
             else
               raise "Unsupported config class: #{config.class}"

@@ -19,7 +19,7 @@ module ActiveAdmin
 
     ACTIVE_ADMIN_ACTIONS = [:index, :show, :new, :create, :edit, :update, :destroy]
 
-    include Actions
+    #include Actions
     include ActionBuilder
     include Callbacks
     include Collection

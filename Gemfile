@@ -6,20 +6,14 @@ ACTIVE_ADMIN_PATH = File.dirname(__FILE__) unless defined?(ACTIVE_ADMIN_PATH)
 
 require File.expand_path('spec/support/detect_rails_version', ACTIVE_ADMIN_PATH)
 
-rails_version = detect_rails_version
-gem 'rails',          rails_version
+gem 'rails', '4.0.0.beta1'
 gem 'bourbon'
 
-case rails_version
-when /^3\.0/
-  # Do nothing, bundler should figure it out
-when /^3\.(1|2)/
-  # These are the gems you have to have for Rails 3.1 to be happy
-  gem 'sass-rails'
-  gem 'uglifier'
-else
-  raise "Rails #{rails_version} is not supported yet"
-end
+gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'
+gem 'coffee-rails', :git => 'https://github.com/rails/coffee-rails.git'
+gem 'uglifier', '1.0.3'
+gem 'sass'
+#gem 'meta_search'
 
 group :development, :test do
   gem 'sqlite3'
