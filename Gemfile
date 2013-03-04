@@ -14,6 +14,7 @@ gem 'coffee-rails', :git => 'https://github.com/rails/coffee-rails.git'
 gem 'uglifier', '1.0.3'
 gem 'sass'
 #gem 'meta_search'
+#gem "ransack"
 
 group :development, :test do
   gem 'sqlite3'
